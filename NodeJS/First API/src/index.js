@@ -9,14 +9,24 @@ const server = http.createServer((request, response) => {
     `Request method: ${request.method} | Endpoint: ${parseUrl.pathname}`
   );
 
+  let { pathname } = parseUrl;
+  let id = null;
+
+  const splitedEndpoint = pathname.split("/").filter(Boolean);
+
+  if (splitedEndpoint.length > 1) {
+    pathname = `/${splitedEndpoint[0]}/:id`;
+    id = splitedEndpoint[1];
+  }
+
   const route = routes.find(
     (routeObj) =>
-      routeObj.endpoint === parseUrl.pathname &&
-      routeObj.method === request.method
+      routeObj.endpoint === pathname && routeObj.method === request.method
   );
 
   if (route) {
     request.query = Object.fromEntries(parseUrl.searchParams);
+    request.params = { id };
     route.handler(request, response);
   } else {
     response.writeHead(404, { "Content-Type": "text/html" });
