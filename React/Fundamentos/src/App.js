@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 
+import Header from './Header';
 import Post from './Post';
+
 
 function App() {
 
@@ -8,8 +10,9 @@ function App() {
 
   return (
     <Fragment>
-      <h1>JStack's Blog</h1>
-      <h2>Posts da Semana</h2>
+      <Header title="JStack's Blog">
+        <h2>Posts da Semana</h2>
+      </Header>
 
       <hr />
 
