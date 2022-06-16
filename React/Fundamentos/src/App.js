@@ -10,20 +10,22 @@ function App() {
 
   return (
     <Fragment>
-      <Header title="JStack's Blog">
+      <Header>
         <h2>Posts da Semana</h2>
       </Header>
 
       <hr />
 
       <Post 
+        likes={10}
         post={{
           title: 'Título da notícia 01', 
           subtitle: 'Subtítulo 01',
         }}
       />
 
-      <Post 
+      <Post
+        likes={20}
         post={{
           title: 'Título da notícia 02', 
           subtitle: 'Subtítulo 02',

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from 'prop-types';
 
 function Header(props) {
   return (
@@ -8,5 +9,14 @@ function Header(props) {
     </Fragment>
   );
 }
+
+Header.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+Header.defaultProps = {
+  title: `JStack's Blog`
+};
 
 export default Header;
