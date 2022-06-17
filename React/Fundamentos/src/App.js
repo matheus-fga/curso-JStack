@@ -3,6 +3,11 @@ import React, { Fragment } from 'react';
 import Header from './Header';
 import Post from './Post';
 
+const posts = [
+  { title: 'Title#01', subtitle: 'Sub#01', likes: 20 },
+  { title: 'Title#02', subtitle: 'Sub#02', likes: 10 },
+  { title: 'Title#03', subtitle: 'Sub#03', likes: 50 },
+];
 
 function App() {
 
@@ -16,21 +21,13 @@ function App() {
 
       <hr />
 
-      <Post 
-        likes={10}
-        post={{
-          title: 'Título da notícia 01', 
-          subtitle: 'Subtítulo 01',
-        }}
-      />
-
-      <Post
-        likes={20}
-        post={{
-          title: 'Título da notícia 02', 
-          subtitle: 'Subtítulo 02',
-        }}
-      />
+      {posts.map((post, key) => (
+        <Post 
+          post={{ title: post.title, subtitle: post.subtitle }} 
+          likes={post.likes} 
+          key={key}
+        />
+      ))}
     </Fragment>
   );
 }
