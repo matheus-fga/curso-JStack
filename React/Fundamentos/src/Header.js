@@ -8,18 +8,13 @@ function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext)
 
   return (
-    <div 
-      style={{
-        background: 'rgb(150, 150, 150)',
-        fontFamily: 'sans-serif'
-      }} 
-    >
+    <Fragment>
       <h1>{props.title}</h1>
       <Button onClick={onToggleTheme}>
         Mudar Tema
       </Button>
       {props.children}
-    </div>
+    </Fragment>
   );
 }
 
