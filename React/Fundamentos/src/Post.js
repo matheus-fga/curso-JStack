@@ -1,25 +1,27 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 
 import PostHeader from "./PostHeader";
+import styles from "./Post.scss"
 function Post(props) {
   return (
-    <Fragment>
-      <article>
-        <PostHeader 
-          onRemove={props.onRemove} 
-          post={{ id: props.post.id, 
-                  title: props.post.title,
-                  read: props.post.read
-          }}
-        />
-        <br />
-        <small>{props.post.subtitle}</small>
-        <br />
-        <small>Likes: {props.post.likes + 1}</small>
-      </article>
-      <br/>
-    </Fragment>
+    <article 
+      className={
+        props.post.removed ? styles.postDeleted : styles.post
+      }
+    >
+      <PostHeader 
+        onRemove={props.onRemove} 
+        post={{ id: props.post.id, 
+                title: props.post.title,
+                read: props.post.read
+        }}
+      />
+      <br />
+      <small>{props.post.subtitle}</small>
+      <br />
+      <small>Likes: {props.post.likes + 1}</small>
+    </article>
   );
 }
 
@@ -31,6 +33,7 @@ Post.propTypes = {
     subtitle: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
     read: PropTypes.bool.isRequired,
+    removed: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

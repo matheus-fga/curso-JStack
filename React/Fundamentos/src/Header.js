@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import PropTypes from 'prop-types';
-import styles from './Header.css'
+import styles from './Header.scss'
 
 import Button from "./Button";
 import { ThemeContext } from "./ThemeContext";
