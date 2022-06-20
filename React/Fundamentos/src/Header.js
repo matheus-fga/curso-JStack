@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import PropTypes from 'prop-types';
+import styles from './Header.css'
 
 import Button from "./Button";
 import { ThemeContext } from "./ThemeContext";
@@ -9,7 +10,7 @@ function Header(props) {
 
   return (
     <Fragment>
-      <h1>{props.title}</h1>
+      <h1 className={styles.title}>{props.title}</h1>
       <Button onClick={onToggleTheme}>
         Mudar Tema
       </Button>
