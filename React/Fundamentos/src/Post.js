@@ -1,16 +1,22 @@
 import React, { Fragment } from "react";
 import PropTypes from 'prop-types';
 
+import PostHeader from "./PostHeader";
 function Post(props) {
   return (
     <Fragment>
       <article>
-        <h3>{props.post.read ? <s>{props.post.title}</s> : props.post.title}</h3>
+        <PostHeader 
+          onRemove={props.onRemove} 
+          post={{ id: props.post.id, 
+                  title: props.post.title,
+                  read: props.post.read
+          }}
+        />
+        <br />
         <small>{props.post.subtitle}</small>
         <br />
         <small>Likes: {props.post.likes + 1}</small>
-        <br />
-        <button onClick={() => props.onRemove(props.post.id)}>Remover</button>
       </article>
       <br/>
     </Fragment>

@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, createContext} from 'react';
 
 import Header from './Header';
 import Post from './Post';
+import ThemeProvider from './ThemeContext';
 
 function App() { 
   const [posts, setPosts] = useState([
@@ -30,7 +31,7 @@ function App() {
   }
 
   return (
-    <Fragment>
+    <ThemeProvider>
       <Header>
         <h2>
           Posts da Semana
@@ -47,7 +48,7 @@ function App() {
           onRemove={handleRemovePost}
         />
       ))}
-    </Fragment>
+    </ThemeProvider>
   );
 }
 

@@ -1,10 +1,18 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import PropTypes from 'prop-types';
 
+import Button from "./Button";
+import { ThemeContext } from "./ThemeContext";
+
 function Header(props) {
+  const { onToggleTheme } = useContext(ThemeContext)
+
   return (
     <Fragment>
       <h1>{props.title}</h1>
+      <Button onClick={onToggleTheme}>
+        Mudar Tema
+      </Button>
       {props.children}
     </Fragment>
   );
