@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from 'prop-types'; 
 
-import Button from "./Button";
+import Button from "../Button";
 
 function PostHeader (props) {
   return (
