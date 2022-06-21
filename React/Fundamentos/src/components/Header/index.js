@@ -1,16 +1,20 @@
 import React, { Fragment, useContext } from "react";
 import PropTypes from 'prop-types';
-import styles from './Header.scss'
 
 import Button from "../Button";
+import styled from 'styled-components';
 import { ThemeContext } from "../../context/ThemeContext";
+
+const Title = styled.h1`
+  color: #637BF3;
+`;
 
 function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext)
 
   return (
     <Fragment>
-      <h1 className={styles.title}>{props.title}</h1>
+      <Title>{props.title}</Title>
       <Button onClick={onToggleTheme}>
         Mudar Tema
       </Button>
