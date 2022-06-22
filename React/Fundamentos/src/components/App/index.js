@@ -2,6 +2,8 @@ import React, { Fragment, useState, createContext} from 'react';
 
 import Header from '../Header';
 import Post from '../Post';
+import { Title } from './styles';
+
 import ThemeProvider from '../../context/ThemeContext';
 
 function App() { 
@@ -34,10 +36,10 @@ function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2>
+        <Title as="h2">
           Posts da Semana
           <button onClick={handleRefresh}>Atualizar</button>
-        </h2>
+        </Title>
       </Header>
 
       <hr />
