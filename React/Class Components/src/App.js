@@ -12,10 +12,10 @@ class App extends React.Component {
     return (
       <ThemeProvider>
         <ThemeContext.Consumer>
-          {({ theme, handleToggleTheme }) => (
+          {({ theme }) => (
             <StyledThemeProvider theme={themes[theme] || themes.light}>
               <GlobalStyle />
-              <Layout />
+              <Layout/>
             </ StyledThemeProvider>
           )}
         </ThemeContext.Consumer>
