@@ -4,13 +4,18 @@ export const ThemeContext = createContext();
 
 export class ThemeProvider extends React.Component {
   state = {
-    theme: 'light',
+    theme: JSON.parse(localStorage.getItem('theme')) || 'light',
   };
 
   handleToggleTheme = () => {
     this.setState(prevState => ({
       theme: prevState.theme === 'light' ? 'dark' : 'light'
-    }));
+    }), () => {
+      localStorage.setItem(
+        'theme', 
+        JSON.stringify(this.state.theme)
+      );
+    });
   }
 
   render() {
