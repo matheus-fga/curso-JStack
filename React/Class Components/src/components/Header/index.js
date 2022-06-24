@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
 export default class Header extends React.Component {
+  static propTypes = {
+    onToggleTheme: PropTypes.func.isRequired,
+    selectedTheme: PropTypes.string.isRequired
+  }
+
   render() {
     const { onToggleTheme, selectedTheme } = this.props;
 
@@ -16,15 +22,4 @@ export default class Header extends React.Component {
     );
   };
 }
-
-// export default function Header(props) {
-//   return (
-//     <Container>
-//       <h1>JStack's Blog</h1>
-//       <button type="button" onClick={props.onToggleTheme} >
-//         {props.selectedTheme === 'light' ? '🌚' : '☀️'}
-//       </button>
-//     </Container>
-//   );
-// }
 
