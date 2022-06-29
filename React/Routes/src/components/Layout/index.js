@@ -18,6 +18,7 @@ export default function Layout(props) {
       <Nav>
         <Link to="/">Home</Link>
         <Link to="/posts">Posts</Link>
+        <Link to="/posts/1224231213432">Post</Link>
       </Nav>
       <Routes />
       <Footer 
