@@ -21,10 +21,10 @@ export default function Layout(props) {
         <Link to="/posts/1224231213432">Post</Link>
       </Nav>
       <Routes />
-      <Footer 
+      {/* <Footer 
         onToggleTheme={props.onToggleTheme}
         selectedTheme={props.selectedTheme}
-      />
+      /> */}
     </BrowserRouter>
   );
 }
